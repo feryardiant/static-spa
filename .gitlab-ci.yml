@@ -11,7 +11,7 @@ pages:
     name: gitlab-static
     url: https://feryardiant.gitlab.io/static-spa
   before_script:
-    - apt-get update && apt-get install git openssh-client
+    - apt-get update && apt-get install git openssh-client -yq
     - git config user.name $GITLAB_USER_NAME
     - git config user.email $GITLAB_USER_EMAIL
   script:
