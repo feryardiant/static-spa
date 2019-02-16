@@ -11,5 +11,7 @@ pages:
   environment:
     name: gitlab-static
     url: https://feryardiant.gitlab.io/static-spa
+  script:
+    - echo 'OK'
   only:
     - master
