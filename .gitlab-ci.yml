@@ -1,11 +1,8 @@
-image: gitlab/gitlab-runner:alpine
-
 stages:
   - deploy
 
 variables:
   GITHUB_PAGE: 'https://feryardiant:$GH_DEPLOY_TOKEN@github.com/feryardiant/static-spa.git'
-
 
 pages:
   stage: deploy
