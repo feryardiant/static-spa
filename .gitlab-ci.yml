@@ -4,7 +4,7 @@ stages:
   - deploy
 
 variables:
-  GITHUB_PAGE: 'https://$CI_PROJECT_NAMESPACE:$DEPLOY_TOKEN@github.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME.git'
+  GITHUB_PAGE: 'https://feryardiant:$GH_DEPLOY_TOKEN@github.com/feryardiant/static-spa.git'
 
 environment:
   name: gitlab-static
