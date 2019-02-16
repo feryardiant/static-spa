@@ -1,4 +1,4 @@
-image: ubuntu:trusty
+image: alphine
 
 stages:
   - deploy
@@ -14,6 +14,7 @@ pages:
   variables:
     GITHUB_PAGE: 'https://$CI_PROJECT_NAMESPACE:$DEPLOY_TOKEN@github.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME.git'
   before_script:
+    - apk add git
     - git config user.name $GITLAB_USER_NAME
     - git config user.email $GITLAB_USER_EMAIL
   script:
