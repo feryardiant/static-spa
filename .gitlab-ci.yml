@@ -6,15 +6,15 @@ stages:
 variables:
   GITHUB_PAGE: 'https://feryardiant:$GH_DEPLOY_TOKEN@github.com/feryardiant/static-spa.git'
 
-environment:
-  name: gitlab-static
-  url: https://feryardiant.gitlab.io/static-spa
 
 pages:
   stage: deploy
   artifacts:
     paths:
       - public
+  environment:
+    name: gitlab-static
+    url: https://feryardiant.gitlab.io/static-spa
   before_script:
     - /bin/sh -c "apk update && apk add --no-cache bash git openssh"
     - git config user.name $GITLAB_USER_NAME
