@@ -10,7 +10,7 @@ const ChildComponent = {
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/',
+  base: '/static-spa/',
   routes: [
     {
       path: '/',
