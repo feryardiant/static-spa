@@ -11,11 +11,10 @@ pages:
     name: gitlab-static
     url: https://feryardiant.gitlab.io/static-spa
   before_script:
-    - apt-get update && apt-get install git openssh-client -yq
+    - apt-get -qq update && apt-get -yqq install git openssh-client
     - git config user.name $GITLAB_USER_NAME
     - git config user.email $GITLAB_USER_EMAIL
   script:
-    - git subtree push -P public -b master $GITHUB_PAGE gh-pages
-    - echo 'OK'
+    - git subtree -q push -P public -b master $GITHUB_PAGE gh-pages && echo 'DONE'
   only:
     - master
