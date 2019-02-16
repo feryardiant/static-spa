@@ -4,9 +4,7 @@ stages:
   - deploy
 
 variables:
-  NAMESPACE: $CI_PROJECT_NAMESPACE
-  PROJECT: $CI_PROJECT_NAME
-  GITHUB_PAGE: 'https://$NAMESPACE:$DEPLOY_TOKEN@github.com/$NAMESPACE/$PROJECT.git'
+  GITHUB_PAGE: 'https://$CI_PROJECT_NAMESPACE:$DEPLOY_TOKEN@github.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME.git'
 
 environment:
   name: gitlab-static
