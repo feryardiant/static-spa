@@ -5,7 +5,7 @@ const ParentComponent = {
 
 const ChildComponent = {
   name: 'child',
-  template: '<h1>Route : {{ $route.name }}</h1>'
+  template: '<h1>Static-Page SPA : {{ $route.meta.title }}</h1>'
 }
 
 const router = new VueRouter({
@@ -17,7 +17,7 @@ const router = new VueRouter({
       name: 'home',
       component: {
         name: 'home',
-        template: '<h1>Hello World</h1>'
+        template: '<h1>Static-Page SPA : Home</h1>'
       },
     },
     {
@@ -27,7 +27,10 @@ const router = new VueRouter({
         {
           path: '',
           name: 'foo',
-          component: ChildComponent
+          component: ChildComponent,
+          meta: {
+            title: 'Foo'
+          }
         },
         {
           path: 'bar',
@@ -36,12 +39,18 @@ const router = new VueRouter({
             {
               path: '',
               name: 'bar',
-              component: ChildComponent
+              component: ChildComponent,
+              meta: {
+                title: 'Foo / Bar'
+              }
             },
             {
               path: 'baz',
               name: 'baz',
               component: ChildComponent,
+              meta: {
+                title: 'Foo / Bar / Baz'
+              }
             }
           ]
         }
