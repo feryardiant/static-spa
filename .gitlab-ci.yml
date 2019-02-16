@@ -1,0 +1,15 @@
+image: node:10.15
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  artifacts:
+    paths:
+      - public
+  environment:
+    name: gitlab-static
+    url: https://feryardiant.gitlab.io/static-spa
+  only:
+    - master
