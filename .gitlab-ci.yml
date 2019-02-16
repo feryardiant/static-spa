@@ -1,4 +1,4 @@
-image: alphine
+image: gitlab/gitlab-runner:alpine
 
 stages:
   - deploy
