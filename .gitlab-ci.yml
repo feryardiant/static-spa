@@ -1,9 +1,3 @@
-image: ubuntu:trusty
-
-variables:
-  GITHUB_PAGE: 'https://feryardiant:$GH_DEPLOY_TOKEN@github.com/feryardiant/static-spa.git'
-  DEBIAN_FRONTEND: 'noninteractive'
-
 pages:
   artifacts:
     paths:
@@ -11,12 +5,5 @@ pages:
   environment:
     name: gitlab-static
     url: https://feryardiant.gitlab.io/static-spa
-  before_script:
-    - if [ -z $GH_DEPLOY_TOKEN ]; then echo 'Github Token not found'; exit 1; fi
-    - apt-get -qq update && apt-get -yqq install git openssh-client
-    - git config user.name $GITLAB_USER_NAME
-    - git config user.email $GITLAB_USER_EMAIL
-  script:
-    - git subtree -q push -P public -b master $GITHUB_PAGE gh-pages && echo 'DONE'
   only:
     - master
